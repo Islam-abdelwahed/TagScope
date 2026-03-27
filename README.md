@@ -11,12 +11,11 @@ Toggle XML/HTML comments with two keyboard shortcuts.
 
 ### Tag-only mode
 
+![Tag-only Demo](./puplic/tag.gif)
+
 Places `<!-- -->` around the open and close tags independently,
 leaving the inner content untouched:
 
-<video width="600">
-  <source src="./puplic/tag.mp4.mp4" type="video/mp4">
-</video>
 
 ```xml
 <!-- Before -->
@@ -28,11 +27,9 @@ leaving the inner content untouched:
 
 ### Block mode
 
-Wraps the entire element — open tag, content, close tag — in a single comment:
+![Tag-only Demo](./puplic/block.gif)
 
-<video width="600" >
-  <source src="./puplic/block.mp4.mp4.mp4" type="video/mp4">
-</video>
+Wraps the entire element — open tag, content, close tag — in a single comment:
 
 ```xml
 <!-- Before -->
