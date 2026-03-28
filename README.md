@@ -11,7 +11,7 @@ Toggle XML/HTML comments with two keyboard shortcuts.
 
 ### Tag-only mode
 
-![Tag-only Demo](./puplic/tag.gif)
+![Tag-only Demo](https://raw.githubusercontent.com/Islam-abdelwahed/TagScope/master/public/tag.gif)
 
 Places `<!-- -->` around the open and close tags independently,
 leaving the inner content untouched:
@@ -27,7 +27,7 @@ leaving the inner content untouched:
 
 ### Block mode
 
-![Tag-only Demo](./puplic/block.gif)
+![Block mode Demo](https://raw.githubusercontent.com/Islam-abdelwahed/TagScope/master/public/block.gif)
 
 Wraps the entire element — open tag, content, close tag — in a single comment:
 

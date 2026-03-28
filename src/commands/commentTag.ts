@@ -8,7 +8,9 @@ const writer = new CommentWriter();
 
 export async function commentTagCommand(): Promise<void> {
   const editor = vscode.window.activeTextEditor;
-  if (!editor) return;
+  if (!editor) {
+    return;
+  }
 
   const { document, selection } = editor;
   const tag = parser.findTagAtCursor(document, selection.active);

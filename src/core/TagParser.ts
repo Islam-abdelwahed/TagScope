@@ -11,12 +11,18 @@ export class TagParser {
     const offset = document.offsetAt(position);
 
     const openStart = this.findOpenBracketBefore(text, offset);
-    if (openStart === -1) return null;
+    if (openStart === -1) {
+      return null;
+    }
 
     const openEnd = text.indexOf('>', openStart);
-    if (openEnd === -1) return null;
+    if (openEnd === -1) {
+      return null;
+    }
 
-    if (offset > openEnd + 1) return null;
+    if (offset > openEnd + 1) {
+      return null;
+    }
 
     const rawTag = text.slice(openStart, openEnd + 1);
 
@@ -30,7 +36,9 @@ export class TagParser {
     }
 
     const nameMatch = rawTag.match(/^<([A-Za-z][A-Za-z0-9\-_.:]*)/);
-    if (!nameMatch) return null;
+    if (!nameMatch) {
+      return null;
+    }
 
     const name = nameMatch[1];
     const openRange = new vscode.Range(
@@ -45,7 +53,9 @@ export class TagParser {
       openEnd + 1
     );
 
-    if (!closeRange) return null;
+    if (!closeRange) {
+      return null;
+    }
 
     return { name, openRange, closeRange };
   }
@@ -63,8 +73,12 @@ export class TagParser {
   private findOpenBracketBefore(text: string, from: number): number {
     for (let i = from; i >= 0; i--) {
       const ch = text[i];
-      if (ch === '<') return i;
-      if (ch === '>' && i !== from) return -1;
+      if (ch === '<') {
+        return i;
+      }
+      if (ch === '>' && i !== from) {
+        return -1;
+      }
     }
     return -1;
   }
@@ -90,7 +104,9 @@ export class TagParser {
       const nextOpen = openPattern.exec(text);
       const nextClose = closePattern.exec(text);
 
-      if (!nextClose) return null;
+      if (!nextClose) {
+        return null;
+      }
 
       const openIndex = nextOpen?.index ?? Infinity;
       const closeIndex = nextClose.index;
